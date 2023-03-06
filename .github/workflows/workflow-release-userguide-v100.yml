@@ -39,7 +39,7 @@ jobs:
           export PATH=$PATH:${{ github.workspace }}/pandoc-2.19/bin
           cd ${{ github.workspace }}/iotdb/docs/zh/UserGuide
           doc_abs_path=`pwd`
-          cd ${{ github.workspace }}/iotdb-daily-build/program/UserGuide_Publish
+          cd ${{ github.workspace }}/program/UserGuide_Publish
           python3 startup.py ${doc_abs_path}
           ls
           
