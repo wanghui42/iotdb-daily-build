@@ -9,6 +9,7 @@ jobs:
 #--------
   check-commit:
     runs-on: ubuntu-latest
+    environment: test
     steps:
 # get pandoc
       - name: get pandoc
@@ -59,7 +60,7 @@ jobs:
         id: create-release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ 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 }}
+          GITHUB_TOKEN: ${{ WANGHUI }}
         with:
           tag_name: ${{ steps.sys-info.outputs.date }}-userguide-${{ steps.sys-info.outputs.commit_id }}
           release_name: ${{ steps.sys-info.outputs.date }} userguide ${{ steps.sys-info.outputs.commit_id }}
@@ -70,7 +71,7 @@ jobs:
       - name: Upload docs
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ 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 }}
+          GITHUB_TOKEN: ${{ WANGHUI }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
           asset_path: ${{ github.workspace }}/result.zip
