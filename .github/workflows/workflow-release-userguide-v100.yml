@@ -44,6 +44,7 @@ jobs:
           pwd
           ls
           cd ${{ github.workspace }}/iotdb-daily-build/action-release-userguide/UserGuide_Publish
+          cat /home/runner/work/iotdb-daily-build/iotdb-daily-build/iotdb-daily-build/action-release-userguide/UserGuide_Publish/startup.py
           python3 startup.py ${doc_abs_path}
           ls
           
