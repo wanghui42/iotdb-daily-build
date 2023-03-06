@@ -60,7 +60,7 @@ jobs:
         id: create-release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ WANGHUI }}
+          GITHUB_TOKEN: ${{ vars.WANGHUI }}
         with:
           tag_name: ${{ steps.sys-info.outputs.date }}-userguide-${{ steps.sys-info.outputs.commit_id }}
           release_name: ${{ steps.sys-info.outputs.date }} userguide ${{ steps.sys-info.outputs.commit_id }}
@@ -71,7 +71,7 @@ jobs:
       - name: Upload docs
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ WANGHUI }}
+          GITHUB_TOKEN: ${{ vars.WANGHUI }}
         with:
           upload_url: ${{ steps.create-release.outputs.upload_url }}
           asset_path: ${{ github.workspace }}/result.zip
