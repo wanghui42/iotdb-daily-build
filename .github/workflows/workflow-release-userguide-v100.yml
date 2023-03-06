@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           path: iotdb-daily-build
-          repository: 'thulab/iotdb-daily-build'
+          repository: 'wanghui42/iotdb-daily-build'
           ref: master
           fetch-depth: 0
 # generate
