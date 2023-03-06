@@ -35,12 +35,12 @@ jobs:
 # generate
       - name: generate
         env:
-          PYTHONPATH: ${{ github.workspace }}/iotdb-daily-build/program/UserGuide_Publish
+          PYTHONPATH: ${{ github.workspace }}/iotdb-daily-build/action-release-userguide/UserGuide_Publish
         run: |
           export PATH=$PATH:${{ github.workspace }}/pandoc-2.19/bin
           cd ${{ github.workspace }}/iotdb/docs/zh/UserGuide
           doc_abs_path=`pwd`
-          cd ${{ github.workspace }}/program/UserGuide_Publish
+          cd ${{ github.workspace }}/action-release-userguide/UserGuide_Publish
           python3 startup.py ${doc_abs_path}
           ls
           
