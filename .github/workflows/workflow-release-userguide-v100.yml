@@ -30,7 +30,7 @@ jobs:
         with:
           path: iotdb-daily-build
           repository: 'wanghui42/iotdb-daily-build'
-          ref: master
+          ref: test
           fetch-depth: 0
 # generate
       - name: generate
